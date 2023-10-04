@@ -9,24 +9,15 @@ public class CompStreamAppTest {
         // This is stateless
         list
                 .stream()
-                .filter((a)->!a.startsWith("b"))
-                .forEach(System.out::println);
-
-        /*
-        ArrayList<String> list2 = new ArrayList<>();
-
-        for (String s: list
-             ) {
-            if (!s.startsWith("b"))
-                list2.add(s);
-        }
-
-        for (String s: list2
-             ) {
-                System.out.println(s);
-            }
-        }
-        */
+                .map((a) -> {
+                    System.out.printf("\nLOG: MAP: %s", a);
+                    return a.toUpperCase();
+                })
+                .filter((a) -> {
+                    System.out.printf("\nLOG: FLT: %s", a);
+                    return !((String) a).startsWith("B");
+                })
+                .forEach((s) -> System.out.printf("\nOUTPUT: %s", s));
 
     }
 }
