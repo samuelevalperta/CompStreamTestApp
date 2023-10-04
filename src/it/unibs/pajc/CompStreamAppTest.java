@@ -15,7 +15,7 @@ public class CompStreamAppTest {
                 })
                 .filter((a) -> {
                     System.out.printf("\nLOG: FLT: %s", a);
-                    return !((String) a).startsWith("B");
+                    return !a.startsWith("B");
                 })
                 .sorted()
                 .forEach((s) -> System.out.printf("\nOUTPUT: %s", s));
