@@ -6,6 +6,13 @@ public class CompStreamAppTest {
     public static void main(String[] args) {
         List<String> list = Arrays.asList("a1", "a2", "b1", "c1", "c2");
 
+        // This is stateless
+        list
+                .stream()
+                .filter((a)->!a.startsWith("b"))
+                .forEach((b)-> System.out.println(b));
+
+        /*
         ArrayList<String> list2 = new ArrayList<>();
 
         for (String s: list
@@ -19,4 +26,7 @@ public class CompStreamAppTest {
                 System.out.println(s);
             }
         }
+        */
+
+    }
 }
