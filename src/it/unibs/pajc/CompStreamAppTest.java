@@ -10,7 +10,7 @@ public class CompStreamAppTest {
         list
                 .stream()
                 .filter((a)->!a.startsWith("b"))
-                .forEach((b)-> System.out.println(b));
+                .forEach(System.out::println);
 
         /*
         ArrayList<String> list2 = new ArrayList<>();
